@@ -1,53 +1,114 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
+import { Platform } from "react-native";
 
-import { Platform } from 'react-native';
+/* ========= CORE BRAND COLORS ========= */
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+const primaryRed = "#E50914";      // main accent (matches UI glow)
+const gradientStart = "#FF2D55";   // card gradient top
+const gradientEnd = "#FF7A18";     // card gradient bottom
+const darkBg = "#0B0B0D";          // app background
+const surface = "#151518";         // cards / panels
+const glass = "rgba(255,255,255,0.06)";
+const border = "rgba(255,255,255,0.12)";
+
+/* ========= THEME ========= */
 
 export const Colors = {
-  light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
-  },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
-  },
-};
+    /* text */
+    textPrimary: "#FFFFFF",
+    textSecondary: "#B8B8C2",
+    textMuted: "#6E6E78",
 
+    /* layout */
+    background: darkBg,
+    surface: surface,
+    glass: glass,
+    border: border,
+
+    /* accents */
+    primary: primaryRed,
+    gradientStart,
+    gradientEnd,
+
+    /* icons */
+    iconActive: "#FFFFFF",
+    iconInactive: "#7A7A85",
+
+    /* buttons */
+    like: "#FF375F",
+    dislike: "#3A3A40",
+    message: "#8E8E93",
+  },
+
+  light: {
+    textPrimary: "#0B0B0D",
+    textSecondary: "#555",
+    textMuted: "#888",
+
+    background: "#F6F6F8",
+    surface: "#FFFFFF",
+    glass: "rgba(0,0,0,0.04)",
+    border: "rgba(0,0,0,0.08)",
+
+    primary: primaryRed,
+    gradientStart,
+    gradientEnd,
+
+    iconActive: "#000",
+    iconInactive: "#999",
+
+    like: "#FF375F",
+    dislike: "#DDD",
+    message: "#AAA",
+  }
+};
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
+    sans: "SF Pro Display",
+    body: "SF Pro Text",
+    rounded: "SF Pro Rounded",
+    mono: "SFMono-Regular",
   },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
+
+  android: {
+    sans: "Roboto",
+    body: "Roboto",
+    rounded: "sans-serif-medium",
+    mono: "monospace",
   },
+
   web: {
-    sans: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
-    serif: "Georgia, 'Times New Roman', serif",
-    rounded: "'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif",
-    mono: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+    sans: "Inter, system-ui, sans-serif",
+    body: "Inter, system-ui, sans-serif",
+    rounded: "Nunito, sans-serif",
+    mono: "JetBrains Mono, monospace",
+  },
+
+  default: {
+    sans: "System",
+    body: "System",
+    rounded: "System",
+    mono: "monospace",
   },
 });
+export const UI = {
+  radius: {
+    sm: 10,
+    md: 18,
+    lg: 28,
+    pill: 999,
+  },
+
+  shadow: {
+    card: {
+      shadowColor: "#000",
+      shadowOpacity: 0.4,
+      shadowRadius: 20,
+      elevation: 20,
+    },
+  },
+
+  blur: {
+    glass: 40,
+  },
+};
