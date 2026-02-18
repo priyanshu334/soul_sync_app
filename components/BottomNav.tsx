@@ -1,7 +1,7 @@
-import React from "react";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { Colors } from "@/constants/theme";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors } from "../theme";
+import React from "react";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 export default function BottomNav() {
   return (

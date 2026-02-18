@@ -1,9 +1,9 @@
+import ActionButtons from "@/components/ActionButton";
+import BottomNav from "@/components/BottomNav";
+import SwipeCard from "@/components/SwipeCard";
+import { Colors } from "@/constants/theme";
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import SwipeCard from "./SwipeCard";
-import ActionButtons from "../components/ActionButtons";
-import BottomNav from "../components/BottomNav";
-import { Colors } from "../theme";
+import { StyleSheet, View } from "react-native";
 
 export default function HomeScreen() {
   return (

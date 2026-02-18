@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import { Colors } from "@/constants/theme";
 import { LinearGradient } from "expo-linear-gradient";
-import { Colors } from "../theme";
+import React from "react";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 
 const { width } = Dimensions.get("window");
 
