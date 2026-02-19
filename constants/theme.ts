@@ -1,114 +1,50 @@
-import { Platform } from "react-native";
+import { StyleSheet } from "react-native";
 
-/* ========= CORE BRAND COLORS ========= */
+export const COLORS = {
+  background: "#000",
+  surface: "#0a0a0a",
+  white: "#ffffff",
+  gray: "#BFBFBF",
 
-const primaryRed = "#E50914";      // main accent (matches UI glow)
-const gradientStart = "#FF2D55";   // card gradient top
-const gradientEnd = "#FF7A18";     // card gradient bottom
-const darkBg = "#0B0B0D";          // app background
-const surface = "#151518";         // cards / panels
-const glass = "rgba(255,255,255,0.06)";
-const border = "rgba(255,255,255,0.12)";
+ primaryStart: "#6A00F4",
+primaryEnd: "#C77DFF"
+};
 
-/* ========= THEME ========= */
+export const SIZES = {
+  padding: 20,
+  radius: 30,
+  title: 42,
+  subtitle: 14,
+};
 
-export const Colors = {
-  dark: {
-    /* text */
-    textPrimary: "#FFFFFF",
-    textSecondary: "#B8B8C2",
-    textMuted: "#6E6E78",
-
-    /* layout */
-    background: darkBg,
-    surface: surface,
-    glass: glass,
-    border: border,
-
-    /* accents */
-    primary: primaryRed,
-    gradientStart,
-    gradientEnd,
-
-    /* icons */
-    iconActive: "#FFFFFF",
-    iconInactive: "#7A7A85",
-
-    /* buttons */
-    like: "#FF375F",
-    dislike: "#3A3A40",
-    message: "#8E8E93",
+export const GLOBAL = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.background,
   },
 
-  light: {
-    textPrimary: "#0B0B0D",
-    textSecondary: "#555",
-    textMuted: "#888",
+  center: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
 
-    background: "#F6F6F8",
-    surface: "#FFFFFF",
-    glass: "rgba(0,0,0,0.04)",
-    border: "rgba(0,0,0,0.08)",
+  title: {
+    fontSize: SIZES.title,
+    color: COLORS.white,
+    fontWeight: "600",
+    lineHeight: 48,
+  },
 
-    primary: primaryRed,
-    gradientStart,
-    gradientEnd,
+  subtitle: {
+    fontSize: SIZES.subtitle,
+    color: COLORS.gray,
+    textAlign: "center",
+    marginTop: 15,
+    paddingHorizontal: 25,
+  },
 
-    iconActive: "#000",
-    iconInactive: "#999",
-
-    like: "#FF375F",
-    dislike: "#DDD",
-    message: "#AAA",
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
   }
-};
-export const Fonts = Platform.select({
-  ios: {
-    sans: "SF Pro Display",
-    body: "SF Pro Text",
-    rounded: "SF Pro Rounded",
-    mono: "SFMono-Regular",
-  },
-
-  android: {
-    sans: "Roboto",
-    body: "Roboto",
-    rounded: "sans-serif-medium",
-    mono: "monospace",
-  },
-
-  web: {
-    sans: "Inter, system-ui, sans-serif",
-    body: "Inter, system-ui, sans-serif",
-    rounded: "Nunito, sans-serif",
-    mono: "JetBrains Mono, monospace",
-  },
-
-  default: {
-    sans: "System",
-    body: "System",
-    rounded: "System",
-    mono: "monospace",
-  },
 });
-export const UI = {
-  radius: {
-    sm: 10,
-    md: 18,
-    lg: 28,
-    pill: 999,
-  },
-
-  shadow: {
-    card: {
-      shadowColor: "#000",
-      shadowOpacity: 0.4,
-      shadowRadius: 20,
-      elevation: 20,
-    },
-  },
-
-  blur: {
-    glass: 40,
-  },
-};
