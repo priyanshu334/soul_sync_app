@@ -1,10 +1,11 @@
 import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 import {
-    ImageBackground,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { COLORS, GLOBAL } from "../../constants/theme";
 
@@ -32,7 +33,7 @@ export default function screen_one() {
 
         {/* Buttons */}
         <View style={styles.row}>
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity style={styles.loginBtn} onPress={()=>router.push("/(auth)/login")}>
             <LinearGradient
               colors={[COLORS.primaryStart, COLORS.primaryEnd]}
               style={styles.btnGradient}
@@ -41,7 +42,7 @@ export default function screen_one() {
             </LinearGradient>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.signupBtn}>
+          <TouchableOpacity style={styles.signupBtn} onPress={()=>router.push("/(auth)/register")}>
             <Text style={styles.signupText}>Signup</Text>
           </TouchableOpacity>
         </View>
