@@ -21,7 +21,6 @@ export default function Register() {
 
   const handleRegister = () => {
     console.log({ name, email, password });
-    // later we will connect Supabase here
   };
 
   return (
@@ -31,6 +30,8 @@ export default function Register() {
       resizeMode="cover"
     >
       <StatusBar barStyle="light-content" />
+
+      {/* Dark Overlay */}
       <View style={styles.overlay} />
 
       <KeyboardAvoidingView
@@ -42,9 +43,10 @@ export default function Register() {
           <Ionicons name="arrow-back" size={24} color="white" />
         </TouchableOpacity>
 
+        {/* Form Container */}
         <View style={styles.container}>
-          <Text style={styles.title}>Create Account</Text>
-          <Text style={styles.subtitle}>
+          <Text style={[styles.title, { color: "white" }]}>Create Account</Text>
+          <Text style={[styles.subtitle, { color: "white" }]}>
             Begin your Lovitche journey today
           </Text>
 
@@ -89,15 +91,12 @@ export default function Register() {
             />
           </View>
 
-          {/* Button */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={handleRegister}
-          >
+          {/* Register Button */}
+          <TouchableOpacity style={styles.button} onPress={handleRegister}>
             <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
 
-          {/* Login Link */}
+          {/* Login Navigation */}
           <TouchableOpacity onPress={() => router.push("/login")}>
             <Text style={styles.loginText}>
               Already have an account? Log in
@@ -111,13 +110,12 @@ export default function Register() {
 
 const styles = StyleSheet.create({
   bg: {
-    flex: 1,
-    justifyContent: "center"
+    flex: 1
   },
 
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: COLORS.gray,
+    backgroundColor: COLORS.overlay
   },
 
   back: {
@@ -128,26 +126,27 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    paddingHorizontal: 30,
-    marginTop: 120
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: 30
   },
 
   title: {
     fontSize: 28,
-    color: "white",
+    color: COLORS.textPrimary,
     fontWeight: "700",
     marginBottom: 6
   },
 
   subtitle: {
-    color: COLORS.gray,
+    color: COLORS.textSecondary,
     marginBottom: 30
   },
 
   inputBox: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: COLORS.gray,
+    backgroundColor: COLORS.inputBg,
     borderRadius: 30,
     paddingHorizontal: 16,
     marginBottom: 15,
@@ -170,7 +169,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     textAlign: "center",
-    fontWeight: "600"
+    fontWeight: "600",
+    fontSize: 16
   },
 
   loginText: {
